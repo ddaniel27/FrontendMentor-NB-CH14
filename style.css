@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root{
+    --cyan: hsl(179, 62%, 43%);
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Karla', sans-serif;
+}
+
+body{
+    background: var(--light-gray);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    row-gap: 2rem;
+}
+
+.card{
+    width: 90%;
+    max-width: 560px;
+    background: white;
+    border-radius: 7px;
+    box-shadow: 1px 3px 10px 1px var(--grayish-blue);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 35% 32.5% 32.5%;
+    height: 85vh;
+}
+
+.card > div{
+    padding:20px;
+}
+
+h2{
+    font-size: 1.2rem;
+}
+
+.general-info, .pricing-info, .our-info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+.general-info h2{
+    color: var(--cyan);
+}
+.general-info .guarantee{
+    color: var(--bright-yellow);
+    font-weight: 700;
+}
+.general-info .info{
+    color: var(--grayish-blue);
+    font-size: .9rem;
+    line-height: 1.7;
+}
+
+.pricing-info h2, .our-info h2{
+    color: white;
+}
+
+.pricing-info{
+    background: var(--cyan); 
+}
+
+.pricing-info .text .price{
+    color: var(--light-gray);
+}
+.pricing-info .text .price span{
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: .7rem;
+}
+.pricing-info .text .access{
+    color: white;
+    font-weight: 400;
+    margin-top: .4rem;
+}
+
+.pricing-info .sign-up{
+    background: var(--bright-yellow);
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0px 3px 10px 1px rgba(73, 73, 73, 0.521);
+    color: var(--light-gray);
+    cursor: pointer;
+    padding: .9rem 0;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: .1s;
+    margin-top: .6rem;
+}
+.pricing-info .sign-up:hover{
+    background: var(--light-gray);
+    color: var(--bright-yellow);
+}
+.pricing-info .sign-up:active{
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+.our-info{
+    background: hsl(179, 49%, 54%);
+}
+
+.our-info ul{
+    color: var(--light-gray);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.attribution{
+    color: black;
+    font-size: .9rem;
+}
+.attribution a{
+    color: var(--cyan);
+    text-decoration: none;
+}
+.attribution a:hover{
+    text-decoration: underline;
+}
+.attribution a:active{
+    color: var(--bright-yellow);
+}
+
+@media screen and (min-width: 750px){
+    .card{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 45% 55%;
+        height: 70vh;
+        max-height: 500px;
+    }
+    .general-info{
+        grid-row: 1/2;
+        grid-column: 1/3;
+    }
+    
+}
